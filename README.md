@@ -22,7 +22,7 @@
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
+|user|reference|null: false, foreign_key: true|
 |group|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
@@ -33,8 +33,8 @@
 |------|----|-------|
 |body|text|
 |image|string|
-|group_id|reference|null: false,coreign_key,foreign_key:true|
-|user_id|reference|null:false,foreign_key:true|
+|group|reference|null: false,coreign_key,foreign_key:true|
+|user|reference|null:false,foreign_key:true|
 ### Association
 - belongs_to :user
 - belongs_to :group
