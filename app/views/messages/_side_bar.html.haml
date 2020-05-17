@@ -4,17 +4,15 @@
       %h3.left-header__acount-area__user-name
         = current_user.name
       .left-header__acount-area__icon-area
-        = link_to "#", class: "left-header__acount-area__icon-area__btn" do
+        = link_to new_group_path, class: "left-header__acount-area__icon-area__btn" do
           %i.far.fa-edit
         = link_to edit_user_path(current_user), class: "left-header__acount-area__icon-area__btn"do
           %i.fas.fa-cog
   .group-list
-    .group-list__group-area
-      .group-list__group-area__group-name
-        group-name
-      .group-list__group-area__group-message
-        group-message
-      .group-list__group-area__group-name
-        group-name
-      .group-list__group-area__group-message
-        group-message
+    - current_user.groups.each do |group|
+      .group-area
+        = link_to "#" do
+          .group-area__name
+            = group.name
+          .group-area__message
+            group-message
