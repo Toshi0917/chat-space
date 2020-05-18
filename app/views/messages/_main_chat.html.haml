@@ -2,36 +2,22 @@
   .right-header
     .right-header__group-area
       .right-header__group-area__group-name
-        group-name
+        = @group.name
       .right-header__group-area__member
         .right-header__group-area__member__tag
           Member :
-        .right-header__group-area__member__user-name
-          member-name
-        .right-header__group-area__member__user-name
-          member-name
-    = link_to "#", class: "right-header__edit-btn" do
+        - @group.users.each do |users|
+          .right-header__group-area__member__user-name
+            = users.name
+    = link_to edit_group_path(@group), class: "right-header__edit-btn" do
       Edit
   .message-field
-    .message-field__message-area
-      .message-field__message-area__user-status
-        .message-field__message-area__user-status__name
-          user-name
-        .message-field__message-area__user-status__timestamp
-          2020/05/12
-      .message-field__message-area__message
-        テスト
-      .message-field__message-area__user-status
-        .message-field__message-area__user-status__name
-          user-name
-        .message-field__message-area__user-status__timestamp
-          2020/05/12
-      .message-field__message-area__message
-        テスト
+    = render @messages
   .footer
-    = form_with url: "#", class: "footer__form" do |f|
-      = f.text_field :text, placeholder: "type a message", class: "footer__form__text-area"
-      = f.label :image, class: 'footer__form__post-btn' do
-        = icon('far', 'image', class: 'footer__form__post-btn__icon')
-        = f.file_field :image, class: 'footer__form__post-btn__file-field'
-      = f.submit 'Send', class: 'footer__form__send'
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form__contents
+        = f.text_field :body, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'

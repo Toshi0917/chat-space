@@ -11,8 +11,8 @@
   .group-list
     - current_user.groups.each do |group|
       .group-area
-        = link_to "#" do
+        = link_to group_messages_path(group) do
           .group-area__name
             = group.name
           .group-area__message
-            group-message
+            = group.show_last_message
