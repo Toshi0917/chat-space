@@ -1,12 +1,12 @@
 .side-bar
   .left-header
-    .left-header__acount-area
-      %h3.left-header__acount-area__user-name
+    .acount-area
+      %h3.acount-area__user-name
         = current_user.name
-      .left-header__acount-area__icon-area
-        = link_to new_group_path, class: "left-header__acount-area__icon-area__btn" do
+      .acount-area__icon-area
+        = link_to new_group_path, class: "acount-area__icon-area__btn" do
           %i.far.fa-edit
-        = link_to edit_user_path(current_user), class: "left-header__acount-area__icon-area__btn"do
+        = link_to edit_user_path(current_user), class: "acount-area__icon-area__btn"do
           %i.fas.fa-cog
   .group-list
     - current_user.groups.each do |group|

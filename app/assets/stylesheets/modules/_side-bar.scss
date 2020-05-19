@@ -1,0 +1,52 @@
+@import "color";
+
+.side-bar {
+  color: $whiteColer;
+  font-weight: bold;
+  .left-header {
+    background-color: #253141;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    .acount-area {
+      height: 20px;
+      width: 260px;
+      margin: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      &__user-name {
+        font-size: 16px;
+      }
+      &__icon-area {
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+        &__btn {
+          color: $whiteColer;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  .group-list {
+    background-color: #2f3e51;
+    height: calc( 100vh - 100px );
+    width: 300px;
+    padding: 20px 20px 0 20px;
+    .group-area {
+      &__name {
+        font-size: 15px;
+      }
+      &__message {
+        margin-top: 5px;
+        margin-bottom: 40px;
+        font-size: 11px;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    color: $whiteColer;
+  }
+}
+

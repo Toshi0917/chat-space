@@ -1,66 +1,21 @@
+@import "color";
+
 * {
   box-sizing: border-box;
 }
-
 .Wrapper {
   display: flex;
-}
-
-.side-bar {
-  color: #ffffff;
-  font-weight: bold;
-  .left-header {
-    background-color: #253141;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    &__acount-area {
-      height: 20px;
-      width: 260px;
-      margin: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      &__user-name {
-        font-size: 16px;
-      }
-      &__icon-area {
-        width: 60px;
-        display: flex;
-        justify-content: flex-end;
-        &__btn {
-          color: #ffffff;
-          margin-left: 5px;
-        }
-      }
-    }
-  }
-  .group-list {
-    background-color: #2f3e51;
-    height: calc( 100vh - 100px );
-    width: 300px;
-    padding: 20px 20px 0 20px;
-    &__group-area {
-      &__group-name {
-        font-size: 15px;
-      }
-      &__group-message {
-        margin-top: 5px;
-        margin-bottom: 40px;
-        font-size: 11px;
-      }
-    }
-  }
 }
 
 .main-chat {
   width: calc( 100vw - 300px );
   .right-header {
-    background-color: #ffffff;
+    background-color: $whiteColer;
     height: 100px;
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
-    &__group-area {
+    .group-area {
       &__group-name {
         color: #333333;
         font-size: 20px;
@@ -97,6 +52,7 @@
     background-color: #fafafa;
     height: calc( 100vh - 190px);
     padding: 35px 40px 0 40px;
+    overflow: scroll;
     &__message-area {
       &__user-status {
         margin-bottom: 12px;
@@ -114,12 +70,6 @@
         columns: #434a54;
         font-size: 14px;
         margin-bottom: 46px;
-      &__body {
-
-      }
-      &__image {
-
-      }
       }
     }
   }
@@ -127,30 +77,36 @@
     background-color: #d2d2d2;
     height: 90px;
     padding: 20px 50px 20px 40px;
-    &__form {
+    .form {
       display: flex;
+      justify-content: space-between;
+      &__contents {
+        background-color: $whiteColer;
+        position: relative;
+        width: 100%;
         &__text-area {
-          padding-left: 10px;
-          height: 50px;
           border: none;
-          background-color: #fff;
+          height: 50px;
+          padding: 0 45px 0 15px;
           width: 100%;
         }
         &__post-btn {
-          background-color: #fff;
-          padding-right: 10px;
+          height: 50px;
+          position: absolute;
+          right: 10px;
           &__icon {
             line-height: 50px;
             font-size: 25px;
           }
-          &__file-field {
+          &__field {
             display: none;
           }
         }
+      }
       &__send {
         background-color: #38AEF0;
         border: none;
-        color: #fff;
+        color: $whiteColer;
         font-size: 16px;
         height: 50px;
         margin-left: 15px;

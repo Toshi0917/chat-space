@@ -1,23 +1,23 @@
 .main-chat
   .right-header
-    .right-header__group-area
-      .right-header__group-area__group-name
+    .group-area
+      .group-area__group-name
         = @group.name
-      .right-header__group-area__member
-        .right-header__group-area__member__tag
+      .group-area__member
+        .group-area__member__tag
           Member :
         - @group.users.each do |users|
-          .right-header__group-area__member__user-name
+          .group-area__member__user-name
             = users.name
     = link_to edit_group_path(@group), class: "right-header__edit-btn" do
       Edit
   .message-field
     = render @messages
   .footer
-    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
-      .Form__contents
-        = f.text_field :body, class: 'Form__inputContent', placeholder: 'type a message'
-        = f.label :image, class: 'Form__inputImage' do
-          = icon('far', 'image', class: 'Form__icon')
-          = f.file_field :image, class: 'Hidden'
-      = f.submit 'Send', class: 'Form__submit'
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
+      .form__contents
+        = f.text_field :body, class: 'form__contents__text-area', placeholder: 'type a message'
+        = f.label :image, class: 'form__contents__post-btn' do
+          = icon('far', 'image', class: 'form__contents__post-btn__icon')
+          = f.file_field :image, class: 'form__contents__post-btn__field'
+      = f.submit 'Send', class: 'form__send'
