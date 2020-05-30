@@ -1,11 +1,11 @@
-.message-field__message-area
-  .message-field__message-area__user-status
-    .message-field__message-area__user-status__name
+.message-area
+  .message-area__user-status
+    .message-area__user-status__name
       = message.user.name
-    .message-field__message-area__user-status__timestamp
+    .message-area__user-status__timestamp
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  .message-field__message-area__message
+  .message-area__message
     - if message.body.present?
-      %p.message-field__message-area__message__body
+      %p.message-area__message__body
         = message.body
-    = image_tag message.image.url, class: 'message-field__message-area__message__image' if message.image.present?
+    = image_tag message.image.url, class: 'message-area__message__image' if message.image.present?
