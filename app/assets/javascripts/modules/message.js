@@ -54,6 +54,7 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
+      console.log(html)
       $('.message-field').append(html);
     })
     .fail(function() {
