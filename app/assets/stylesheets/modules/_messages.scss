@@ -1,4 +1,3 @@
-@import "color";
 
 * {
   box-sizing: border-box;
@@ -55,21 +54,34 @@
     overflow: scroll;
     .message-area {
       &__user-status {
+        padding: 3px 5px;
+        width: fit-content;
         margin-bottom: 12px;
         display: flex;
+        line-height: 16px;
+        border-bottom: dashed 2px #ffc3c3;
         &__name {
           color: #333333;
           font-size: 16px;
+          font-weight: bold;
         }
         &__timestamp {
           color: #999999;
           font-size: 12px;
+          margin: 1px 0 0 10px;
         }
       }
       &__message {
         columns: #434a54;
         font-size: 14px;
         margin-bottom: 46px;
+        padding: 0.5em 1em;
+        margin: 2em 0;
+        color: #5989cf;
+        background-color: azure;
+        border-bottom: solid 2px;
+        border-right: solid 2px;
+        border-radius: 6px;
       }
     }
   }
