@@ -63,7 +63,7 @@ $(function(){
     .always(function(){
       $('form')[0].reset();
       $('.message-field').animate({ scrollTop: $('.message-field')[0].scrollHeight});
-      $('.send').prop('disabled', false);
+      $('.form__send').prop('disabled', false);
     });
   });
 });
