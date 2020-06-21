@@ -3,5 +3,6 @@ class Api::MessagesController < ApplicationController
     group = Group.find(params[:group_id])
     last_message_id = params[:id]
     @messages = group.messages.includes(:user).where("id > ?", last_message_id)
+    render json: @messages
   end
 end
